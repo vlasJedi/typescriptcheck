@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { MapCoreServiceService } from '../map-core-service/map-core-service.service';
 
 @Component({
   selector: 'map-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.scss']
+  styleUrls: ['./view.component.scss'],
+  providers: [MapCoreServiceService]
 })
-export class ViewComponent implements OnInit {
+export class ViewComponent implements AfterViewInit {
 
-  constructor() { }
+  constructor(private mapCoreServiceService: MapCoreServiceService) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.mapCoreServiceService.createMapView();
   }
-
 }

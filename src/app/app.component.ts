@@ -6,10 +6,6 @@ import { MapCoreServiceService } from './map-core/map-core-service/map-core-serv
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'typescriptcheck';
-  constructor(private mapCoreServiceService: MapCoreServiceService) {};
-  ngOnInit() {
-      this.mapCoreServiceService.createMapView();
-  }
 }
