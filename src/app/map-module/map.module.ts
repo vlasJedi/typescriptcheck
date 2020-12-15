@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViewComponent } from './map-core-view-component/view.component';
-
+import { MapCoreService } from '@app/map-module/map-core-service/map-core.service';
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import { ViewComponent } from './map-core-view-component/view.component';
   imports: [
     CommonModule
   ],
+  providers: [MapCoreService],
   // public API, also we can specify here submodules to be re-exported their API
   exports: [ViewComponent]
 })
-export class MapCoreModule { }
+export class MapModule { }

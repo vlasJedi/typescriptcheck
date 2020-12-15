@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MapBridgeService } from './map-bridge.service';
+import { MapCoreService } from './map-core.service';
 
-describe('MapBridgeService', () => {
-  let service: MapBridgeService;
+describe('MapCoreServiceService', () => {
+  let service: MapCoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MapBridgeService);
+    service = TestBed.inject(MapCoreService);
   });
 
   it('should be created', () => {
