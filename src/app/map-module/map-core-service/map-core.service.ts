@@ -5,6 +5,7 @@ import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import View from 'ol/View';
 import { fromLonLat, toLonLat } from 'ol/proj';
+import { MapControlsService } from '@app/map-module/map-core-service/map-controls-service';
 
 let mapInstance: Map | null = null;
 let mapView: View | null = null;
@@ -17,6 +18,8 @@ import { IMapCoreService } from './i-map-core-service';
   providedIn: "root"
 })
 export class MapCoreService implements IMapCoreService {
+  
+  private mapControlsInstance: MapControlsService | null = null;
 
   createMapView() {
     if (mapInstance) return;
@@ -27,12 +30,15 @@ export class MapCoreService implements IMapCoreService {
     const osmTileLayer = new TileLayer({
       source: new OSM()
     });
+    this.mapControlsInstance = MapControlsService.getInstance();
     mapInstance = new Map({
       target: DEFAULT_CONTAINER_ID,
       layers: [
         osmTileLayer
       ],
-      view: mapView
+      view: mapView,
+      // one control lefts - zoom
+      controls: this.mapControlsInstance.getDefaultControls() || undefined
     });
   };
   // moveToCurrentLocation(successCall, errCall) {

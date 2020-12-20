@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+// OpenLayers dedicated styles
+.zoom-default-control {
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+}
+
+.zoom-default-control-in, .zoom-default-control-out {
+    width: 100px;
+    height: 25px;
+}
+
+.ol-mouse-position {
+    
+}
